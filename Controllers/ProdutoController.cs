@@ -120,6 +120,7 @@ namespace webapi_Produtos.Controllers
         /// <param name="id">ID do produto a ser removido.</param>
         /// <returns>Lista de Produtos atualizada após remoção.</returns>
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<ActionResult> RemoverProdutoPorId([FromRoute] int id)
         {
             var result = await _iproduto.RemoverProdutoPorId(id);
